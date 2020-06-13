@@ -23,6 +23,16 @@
       href="node_modules/bootstrap-social/bootstrap-social.css"
     />
     <link href="css/styles.css" rel="stylesheet" />
+
+    <!-- Google Maps Import -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZcvpJNmnU_LzZO69aLx5NPnFeusXfLec&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./map.css" />
+    <script src="./map.js"></script>
+
     <title>Ristorante Con Fusion: About Us</title>
   </head>
 
@@ -45,12 +55,12 @@
                 ><span class="fa fa-home fa-lg"></span> Home</a
               >
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="./aboutus.html"
                 ><span class="fa fa-info fa-lg"></span> Communication</a
               >
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="./menu.html"
                 ><span class="fa fa-list fa-lg"></span> Location</a
               >
@@ -68,9 +78,9 @@
       <div class="container">
         <div class="row row-header">
           <div class="col-12 col-sm-6">
-            <h1>Communication Channel</h1>
+            <h1>Location Tracker</h1>
             <p>
-              Allows the commander to talk to the rescuers!
+              Displays the location of each first responders!
             </p>
           </div>
           <div class="col-12 col-sm"></div>
@@ -83,60 +93,62 @@
         <div>
           <ol class="col-12 breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-            <li class="breadcrumb-item active">Communication Channel</li>
+            <li class="breadcrumb-item active">Location Tracker</li>
           </ol>
           <hr />
         </div>
       </div>
         <div class="col-sm-6 col-xl-6">
-          <h2>Live channel</h2>
+          <h2>Live location</h2>
         </div>
       </div>
     </div>
-    <div class="container">
-    <div class="row row-content">
-        <div class="col-3">
-            <div class="list-group" id="list-tab" role="tablist">
-              <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Everyone</a>
-              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-1" role="tab" aria-controls="1">Hrithik Roshan</a>
-              <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-2" role="tab" aria-controls="2">Shah Rukh Khan</a>
-              <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-3" role="tab" aria-controls="3">Maria</a>
-              <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-4" role="tab" aria-controls="4">Albert</a>
+    <div id="map" class="m-5"></div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 offset-1 col-sm-2">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-7 col-sm-5">
+            <h5>Our Address</h5>
+            <address>
+              121, Clear Water Bay Road<br />
+              Clear Water Bay, Kowloon<br />
+              HONG KONG<br />
+              <i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br>
+              <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
+              <i class="fa fa-envelope fa-lg"></i>: 
+              <a href="mailto:confusion@food.net">confusion@food.net</a>
+
+            </address>
+          </div>
+          <div class="col-12 col-sm-4 align-self-center">
+            <div class="text-center">
+              <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+              <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+              <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+              <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+              <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+              <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+          </div>
+
             </div>
           </div>
-      <div class="col-sm-6 col-xl-6">
-        <button type="button" class="btn btn-info mb-4 col-sm-11">Broadcast audio command <i class='fa fa-volume-up'></i></button>
-        <div>
         </div>
-        <label class= "col-form-label" for="exampleFormControlTextarea1">Commander Instructions</label>
-        <textarea class="form-control col-sm-11" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-      <div class="card col-sm-3 col-xl-3">
-        <h5 class="card-header">Chat</h5>
-        <div class="card-body" >
-          <h5 class="card-title">Operation Mangal</h5>
-          <div style="overflow-y: scroll; height:250px; width: auto;">
-          <div class="alert alert-dark col-10" role="alert">
-              <span class="badge badge-secondary">Commander</span><br/>
-              Where are you all?
-          </div>
-          <div class="alert alert-dark col-10 pull-right" role="alert">
-              <span class="badge badge-secondary">Hrithik</span>
-              Commander, we have reached the venue!
-          </div>
-          <div class="alert alert-dark col-10 pull-right" role="alert">
-              <span class="badge badge-secondary">Shah Rukh</span><br/>
-              The condition is getting worse
-          </div>
-          <div class="alert alert-dark col-10 pull-left" role="alert">
-              <span class="badge badge-secondary">Commander</span><br/>
-              Be ready at your positions
-          </div>
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <p>© Copyright 2018 Ristorante Con Fusion</p>
           </div>
         </div>
       </div>
-  </div>
-</div>
+    </footer>
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
