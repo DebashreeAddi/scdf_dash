@@ -24,6 +24,13 @@
       href="node_modules/bootstrap-social/bootstrap-social.css"
     />
     <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZcvpJNmnU_LzZO69aLx5NPnFeusXfLec&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./map.css" />
+    <script src="./map.js"></script>
   </head>
 
   <body>
@@ -90,48 +97,105 @@
           <hr />
         </div>
       </div>
-      <div class="row card mt-3" style="width: 18rem;">
-        <div class="text-center mt-2">
-          <h5 class="card-title">Area 1</h5>
+
+      <h6>Images captured by drones</h6>
+      <div class="row">
+        <div class="col-sm-6 card mt-3" style="width: 18rem;" id="card1">
+          <div class="text-center mt-2">
+            <h5 class="card-title">Area 1</h5>
+          </div>
+          <img
+            class="card-img-top"
+            src="./asset/low.jpeg"
+            alt="Card image cap"
+          />
+          <div class="card-body text-center">
+            <button
+              class="btn btn-primary"
+              id="area1"
+              onclick="analyse_area1()"
+            >
+              Analyze Damage
+            </button>
+            <h6>&nbsp;</h6>
+            <h6 class="collapse" id="low">Estimated Damage: Low</h6>
+          </div>
         </div>
-        <img class="card-img-top" src="./asset/low.jpeg" alt="Card image cap" />
-        <div class="card-body text-center">
-          <p>Damage:</p>
-          <a
-            href="#"
-            class="btn btn-primary"
-            id="area1"
-            onclick="analyse_area1()"
-            >Analyze Damage</a
-          >
+        <div class="col-sm-6">
+          <h3>&nbsp;</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.096130579976!2d103.78643892784282!3d1.310933386860453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1a6a782c0e21%3A0x5b7c5e42565572a1!2sHolland%20V!5e0!3m2!1sen!2ssg!4v1592120728473!5m2!1sen!2ssg"
+            width="600"
+            height="450"
+            frameborder="0"
+            style="border: 0;"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          ></iframe>
         </div>
       </div>
-      <div class="row card mt-3" style="width: 18rem;">
-        <div class="text-center mt-2">
-          <h5 class="card-title">Area 2</h5>
+      <div class="row">
+        <div class="col-sm-6 card mt-3" style="width: 18rem;" id="card2">
+          <div class="text-center mt-2">
+            <h5 class="card-title">Area 2</h5>
+          </div>
+          <img
+            class="card-img-top"
+            src="./asset/moderate.jpeg"
+            alt="Card image cap"
+          />
+          <div class="card-body text-center">
+            <button class="btn btn-primary" onclick="analyse_area2()">
+              Analyze Damage
+            </button>
+            <h6>&nbsp;</h6>
+            <h6 class="collapse" id="moderate">Estimated Damage: Moderate</h6>
+          </div>
         </div>
-        <img
-          class="card-img-top"
-          src="./asset/moderate.jpeg"
-          alt="Card image cap"
-        />
-        <div class="card-body text-center">
-          <p>Damage:</p>
-          <a href="#" class="btn btn-primary">Analyze Damage</a>
+        <div class="col-sm-6">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.801477836621!2d103.78226261482473!3d1.2935914621137914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1a52319edb39%3A0x9a36ad159e134e84!2sKent%20Ridge%20MRT%20Station!5e0!3m2!1sen!2ssg!4v1592121439142!5m2!1sen!2ssg"
+            width="600"
+            height="450"
+            frameborder="0"
+            style="border: 0;"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          ></iframe>
         </div>
       </div>
-      <div class="row card mt-3" style="width: 18rem;">
-        <div class="text-center mt-2">
-          <h5 class="card-title">Area 3</h5>
+      <div class="row">
+        <div class="col-sm-6 card mt-3" style="width: 18rem;" id="card3">
+          <div class="text-center mt-2">
+            <h5 class="card-title">Area 3</h5>
+          </div>
+          <img
+            class="card-img-top"
+            src="./asset/severe.jpeg"
+            alt="Card image cap"
+          />
+          <div class="card-body text-center">
+            <button class="btn btn-primary" onclick="analyse_area3()">
+              Analyze Damage
+            </button>
+            <h6>&nbsp;</h6>
+            <h6 class="collapse" id="severe">Estimated Damage: Severe</h6>
+          </div>
         </div>
-        <img
-          class="card-img-top"
-          src="./asset/severe.jpeg"
-          alt="Card image cap"
-        />
-        <div class="card-body text-center">
-          <p>Damage:</p>
-          <a href="#" class="btn btn-primary">Analyze Damage</a>
+        <div class="col-sm-6">
+          <h3>&nbsp;</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1756.5672800702012!2d103.78925905154182!3d1.3073066211955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1a4263ea0bb1%3A0x7676da7fccde0afd!2sBuona%20Vista!5e0!3m2!1sen!2ssg!4v1592121597382!5m2!1sen!2ssg"
+            width="600"
+            height="450"
+            frameborder="0"
+            style="border: 0;"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          ></iframe>
         </div>
       </div>
     </div>
@@ -141,7 +205,19 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
-      function analyse_area1() {}
+      function analyse_area1() {
+        document.getElementById("low").style.display = "block";
+        document.getElementById("card1").style.background = "yellow";
+      }
+      function analyse_area2() {
+        document.getElementById("moderate").style.display = "block";
+        document.getElementById("card2").style.background = "orange";
+      }
+
+      function analyse_area3() {
+        document.getElementById("severe").style.display = "block";
+        document.getElementById("card3").style.background = "red";
+      }
     </script>
   </body>
 </html>
